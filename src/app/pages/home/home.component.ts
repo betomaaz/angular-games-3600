@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Game } from 'src/app/interfaces/interfaces';
+import { Game, Juego } from 'src/app/interfaces/interfaces';
 import { GamesService } from 'src/app/services/games.service';
 
 @Component({
@@ -9,7 +9,12 @@ import { GamesService } from 'src/app/services/games.service';
 })
 export class HomeComponent implements OnInit {
 
-  gameList:Game[] = []
+/*   gameList:Game[] = []
+  textSearch:string="";
+  loading:boolean=false;
+  loadingHome:boolean=false; */
+
+  gameList:Juego[] = []
   textSearch:string="";
   loading:boolean=false;
   loadingHome:boolean=false;
@@ -17,7 +22,7 @@ export class HomeComponent implements OnInit {
   constructor(private service:GamesService) { }
 
   ngOnInit(): void {
-    this.loadingHome=true;
+/*     this.loadingHome=true;
       this.service.getDataGames()
       .subscribe(resp=>{
         console.log(resp.results)
@@ -27,10 +32,23 @@ export class HomeComponent implements OnInit {
         this.loadingHome=true
       },1800)
         this.loadingHome=false
+  } */
+  
+    this.loadingHome=true;
+      this.service.getDataGamesLocal()
+      .subscribe(resp=>{
+        console.log(resp)
+        this.gameList = resp;
+      })
+      setTimeout(() =>{
+        this.loadingHome=true
+      },1800)
+        this.loadingHome=false
   }
+  
 
   onClickSearch(){
-    this.loading=true;
+/*     this.loading=true;
     this.gameList = []
     console.log("Click en buscar:"+this.textSearch);
 
@@ -45,7 +63,7 @@ export class HomeComponent implements OnInit {
         this.gameList = []
       }
     })
-    }, 2500);
+    }, 2500); */
     
   }
 

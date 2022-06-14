@@ -39,3 +39,29 @@ export interface ApiResult {
     results:Game[],
     user_plataforms:boolean
 }
+
+export interface Juego{
+    id?:number,
+    titulo?:string,
+    descripcion?:string,
+    ano?:number,
+    portada?:string
+}
+
+export interface User{
+    email?:string,
+    password?:string,
+    confirmpassword?:string
+}
+
+export interface userToken{
+    expiration:Date,
+    token:string,
+    status:string,
+}
+
+export interface createdUser{
+    email?:string,
+    password?:string,
+    confirmpassword?:string
+}

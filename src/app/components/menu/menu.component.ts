@@ -19,6 +19,11 @@ export class MenuComponent implements OnInit {
       icon:'bi-info-circle'
     },
     {
+      url:'mantgames',
+      text:'Games Maintainer',
+      icon:'bi bi-upload'
+    },
+    {
       url:'contact',
       text:'Contact',
       icon:'bi-telephone'

@@ -4,7 +4,12 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { NotFountComponent } from './not-fount/not-fount.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { ComponentsModule } from '../components/components.module';
+import { MantgamesComponent } from './mantgames/mantgames.component';
+import { RegistryComponent } from './registry/registry.component';
 
 
 
@@ -13,11 +18,17 @@ import { FormsModule } from '@angular/forms';
     AboutComponent,
     ContactComponent,
     HomeComponent,
-    NotFountComponent
+    NotFountComponent,
+    LoginComponent,
+    MantgamesComponent,
+    RegistryComponent
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    RouterModule,
+    ComponentsModule,
+    ReactiveFormsModule
   ]
 })
 export class PagesModule { }

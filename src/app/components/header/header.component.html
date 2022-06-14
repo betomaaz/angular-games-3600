@@ -1,0 +1,13 @@
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid d-flex">
+    <div style="" *ngIf="userLogged">
+      <p class="text-white">{{userName}} | {{userRole}}</p>
+    </div>
+    <div style="margin-left:auto;" *ngIf="!userLogged">
+      <a class="text-white" routerLink="/login">Ingresar</a> | <a class="text-white" routerLink="/registry">Regístrate</a>
+    </div>
+    <div style="margin-left:auto;" *ngIf="userLogged">
+      <a class="text-white" routerLink="" (click)="logout()">Salir</a>
+    </div>
+  </div>
+</nav>

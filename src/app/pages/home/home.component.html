@@ -1,3 +1,5 @@
+<app-header></app-header>
+
 <div class="div-content">
   
 
@@ -13,10 +15,9 @@
       <div class="text" style="width: 1rem; height: 1rem;"></div>
       <div class="spinner-grow text-info" style="width: 2rem; height: 2rem;" role="status">
         <span class="visually-hidden">Loading...</span>
-      </div>    
+      </div>
     </div>
   </div>
-
 
   <div *ngIf="loadingHome==true">
     <section class="text-center container">
@@ -49,14 +50,13 @@
           <div *ngIf="gameList.length>0" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <div *ngFor="let game of gameList" class="col">
               <div class="card shadow-sm">
-                <img src="{{game.background_image}}" alt="">
+                <img src="{{game.portada}}" alt="">
                 <div class="card-body">
-                  <p class="card-text"><b>{{game.name}}</b></p>
+                  <p class="card-text"><b>{{game.titulo}}</b></p>
+                  <p class="card-text">{{game.descripcion}}</p>
                   <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <a href="https://rawg.io/games/{{game.slug}}" target="_blank" type="button" class="btn btn-sm btn-outline-secondary">Más info.</a>
-                    </div>
-                    <small class="text-muted">Fecha de lanzamiento: {{game.released}}</small>
+
+                    <small class="text-muted">Año de lanzamiento: {{game.ano}}</small>
                   </div>
                 </div>
               </div>
