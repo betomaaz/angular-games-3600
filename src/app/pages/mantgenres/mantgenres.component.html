@@ -23,8 +23,8 @@
                     <tr *ngFor="let genre of genre">
                         <td>{{genre.name}}</td>
                         <td>
-                            <a class="btn btn-secondary"><i class="bi bi-pencil-square"></i></a>
-                            <a class="btn btn-dark"><i class="bi bi-trash3-fill"></i></a>
+                            <a routerLink="/updategenres" [queryParams]="{id:genre._id}" class="btn btn-secondary"><i class="bi bi-pencil-square"></i></a>
+                            <a (click)="deleteGenres(genre)" class="btn btn-dark"><i class="bi bi-trash3-fill"></i></a>
 
                         </td>
                     </tr>

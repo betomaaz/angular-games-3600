@@ -12,6 +12,7 @@ import { MantgamesComponent } from './mantgames/mantgames.component';
 import { RegistryComponent } from './registry/registry.component';
 import { MantgenresComponent } from './mantgenres/mantgenres.component';
 import { RegistrygenresComponent } from './registrygenres/registrygenres.component';
+import { UpdategenresComponent } from './updategenres/updategenres.component';
 
 
 
@@ -25,7 +26,8 @@ import { RegistrygenresComponent } from './registrygenres/registrygenres.compone
     MantgamesComponent,
     RegistryComponent,
     MantgenresComponent,
-    RegistrygenresComponent
+    RegistrygenresComponent,
+    UpdategenresComponent
   ],
   imports: [
     CommonModule,

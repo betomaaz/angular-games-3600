@@ -19,4 +19,16 @@ export class GenresService {
   postGenres(genre:genre){
     return this.http.post(`${url}/genre`,genre)
   }
+
+  getGenresById(id:string){
+    return this.http.get(`${url}/genre/byid/${id}`)
+  }
+
+  putGenres(genre:genre){
+    return this.http.put(`${url}/genre/`,genre)
+  }
+
+  deleteGenres(id:string){
+    return this.http.delete(`${url}/genre?id=${id}`)
+  }
 }
