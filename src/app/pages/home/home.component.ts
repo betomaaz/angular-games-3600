@@ -37,8 +37,10 @@ export class HomeComponent implements OnInit {
     this.loadingHome=true;
       this.service.getDataGamesLocal()
       .subscribe(resp=>{
-        console.log(resp)
-        this.gameList = resp;
+        console.log(resp);
+        if(resp.ok){
+          this.gameList = resp.games;
+        }
       })
       setTimeout(() =>{
         this.loadingHome=true

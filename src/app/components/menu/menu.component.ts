@@ -24,6 +24,11 @@ export class MenuComponent implements OnInit {
       icon:'bi bi-upload'
     },
     {
+      url:'mantgenres',
+      text:'Genres Maintainer',
+      icon:'bi bi-joystick'
+    },
+    {
       url:'contact',
       text:'Contact',
       icon:'bi-telephone'

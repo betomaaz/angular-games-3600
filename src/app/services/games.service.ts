@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { ApiResult, Game, Juego } from '../interfaces/interfaces';
+import { ApiResult, Game, GameResponse, Juego } from '../interfaces/interfaces';
 
 const url = environment.URL;
 
@@ -21,11 +21,11 @@ export class GamesService {
   }
 
   getDataGamesLocal() {
-    return this.http.get<Juego[]>(`${url}/Games`);
+    return this.http.get<GameResponse>(`${url}/Game`);
   }
 
   postGame(game:Juego){
-    return this.http.post(`${url}/Games`,game);
+    return this.http.post(`${url}/Game`,game);
   }
 
 }

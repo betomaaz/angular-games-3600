@@ -40,6 +40,11 @@ export interface ApiResult {
     user_plataforms:boolean
 }
 
+export interface GameResponse{
+    ok:boolean,
+    games:Game[]
+}
+
 export interface Juego{
     id?:number,
     titulo?:string,
@@ -64,4 +69,14 @@ export interface createdUser{
     email?:string,
     password?:string,
     confirmpassword?:string
+}
+
+export interface genreResponse{
+    ok:boolean,
+    genre:genre[]
+}
+
+export interface genre{
+    _id?:string,
+    name?:string    
 }

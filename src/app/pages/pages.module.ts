@@ -10,6 +10,8 @@ import { LoginComponent } from './login/login.component';
 import { ComponentsModule } from '../components/components.module';
 import { MantgamesComponent } from './mantgames/mantgames.component';
 import { RegistryComponent } from './registry/registry.component';
+import { MantgenresComponent } from './mantgenres/mantgenres.component';
+import { RegistrygenresComponent } from './registrygenres/registrygenres.component';
 
 
 
@@ -21,7 +23,9 @@ import { RegistryComponent } from './registry/registry.component';
     NotFountComponent,
     LoginComponent,
     MantgamesComponent,
-    RegistryComponent
+    RegistryComponent,
+    MantgenresComponent,
+    RegistrygenresComponent
   ],
   imports: [
     CommonModule,

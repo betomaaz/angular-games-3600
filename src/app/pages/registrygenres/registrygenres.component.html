@@ -1,0 +1,23 @@
+<div style="min-width:81vw ;">
+<app-header></app-header>
+<div class="card col-md-5 mt-5" style="margin-left:auto ; margin-right:auto">
+    <div class="card-header bg-success text-white text-center">
+        <h4>Cargar Género</h4>
+    </div>
+    <div class="card-body">
+        <form [formGroup]="genreForm">
+            <div class="form-group mt-3">
+                <input formControlName="name" type="text" class="form-control" placeholder="Ejemplo: Acción, Aventura...">
+                <span *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="text-danger">
+                    El campo nombre es requerido
+                </span>
+            </div>
+
+            <div>
+            <button [disabled]="genreForm.invalid" (click)="submitForm()" class="btn btn-dark mt-3">Guardar</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+</div>
