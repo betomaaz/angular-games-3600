@@ -25,6 +25,7 @@ export class RegistryComponent implements OnInit {
     ) { }
 
   registryForm:FormGroup = this.fb.group({
+    "nombre" : new FormControl(null,Validators.required),
     "email" : new FormControl(null, Validators.compose([Validators.required,Validators.email])),
     "password" : new FormControl(null, Validators.required),
     "confirmpassword" : new FormControl(null, Validators.required)
@@ -33,6 +34,9 @@ export class RegistryComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  get nombre(){
+    return this.registryForm.get("nombre");
+  }
   get email(){
     return this.registryForm.get("email");
   }
@@ -52,6 +56,7 @@ export class RegistryComponent implements OnInit {
     if(this.registryForm.valid){
       console.log("funciona");
       if(this.registryForm.valid){
+        this.newUser.nombre = this.nombre?.value;
         this.newUser.email = this.email?.value;
         this.newUser.password = this.password?.value;
         this.newUser.confirmpassword = this.confirmpassword?.value;

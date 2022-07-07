@@ -20,10 +20,10 @@ export class UserService {
   async login(user : User){
 
     return new Promise(resolve =>{
-      this.http.post<userToken>(`${url}/account/login`, user)
+      this.http.post<userToken>(`${url}/user/login`, user)
       .subscribe(resp => {
         console.log(resp);
-        if(resp.status == "ok"){
+        if(resp.ok){
           this.saveToken(resp.token);
           this.readToken();
           resolve(true);
@@ -35,25 +35,6 @@ export class UserService {
     })
 
   }
-
-/*   async registry(user : User){
-
-    return new Promise(resolve =>{
-      this.http.post<userToken>(`${url}/account`, user)
-      .subscribe(resp => {
-        console.log(resp);
-        if(resp.status == "ok"){
-          this.saveToken(resp.token);
-          this.readToken();
-          resolve(true);
-        }else{
-          this.removeToken();
-          resolve(false);
-        }
-      });
-    })
-
-  } */
 
   saveToken(token:string){
     localStorage.setItem("token",token);
@@ -81,8 +62,8 @@ export class UserService {
     let decodeJwtData = JSON.parse(decodeJSONJwtData);
 
     console.log(decodeJwtData)
-    this.userName = decodeJwtData['unique_name'];
-    this.userRole = decodeJwtData['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']
+    this.userName = decodeJwtData.user.nombre;
+    //this.userRole = decodeJwtData['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']
   }
 
   logout(){
@@ -94,10 +75,10 @@ export class UserService {
 
   async postAccount(user:User){
     return new Promise(resolve =>{
-      this.http.post<userToken>(`${url}/account`, user)
+      this.http.post<userToken>(`${url}/user`, user)
       .subscribe(resp => {
         console.log(resp);
-        if(resp.status == "ok"){
+        if(resp.ok){
           this.saveToken(resp.token);
           this.readToken();
           resolve(true);

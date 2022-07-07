@@ -49,15 +49,15 @@ export interface Juego{
 }
 
 export interface User{
+    nombre?:string,
     email?:string,
     password?:string,
     confirmpassword?:string
 }
 
 export interface userToken{
-    expiration:Date,
-    token:string,
-    status:string,
+    ok:boolean,
+    token:string
 }
 
 export interface createdUser{

@@ -23,7 +23,7 @@ export class RegistryService {
       this.http.post<userToken>(`${url}/account/login`, user)
       .subscribe(resp => {
         console.log(resp);
-        if(resp.status == "ok"){
+        if(resp.ok){
           this.saveToken(resp.token);
           this.readToken();
           resolve(true);

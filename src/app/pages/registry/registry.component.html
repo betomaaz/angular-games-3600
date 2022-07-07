@@ -11,6 +11,12 @@
         <form [formGroup]="registryForm">
 
             <div class="form-group">
+                <input formControlName="nombre" type="text" class="form-control" placeholder="Escribe tu nombre">
+                <span *ngIf="nombre?.invalid && (nombre?.dirty || nombre?.touched) && nombre?.errors?.['required']" class="text-danger">
+                    El campo nombre es requerido
+                </span><br>
+            </div>
+            <div class="form-group">
                 <input formControlName="email" type="email" class="form-control" placeholder="Ingresa tu email">
                 <span *ngIf="email?.invalid && (email?.dirty || email?.touched) && email?.errors?.['required']" class="text-danger">
                     El campo email es requerido
