@@ -4,12 +4,12 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
-import { MantgamesComponent } from './pages/mantgames/mantgames.component';
-import { MantgenresComponent } from './pages/mantgenres/mantgenres.component';
+import { MantgamesComponent } from './pages/mantenedores/games/mantgames/mantgames.component';
+import { MantgenresComponent } from './pages/mantenedores/games/mantgames/genres/mantgenres/mantgenres.component';
 import { NotFountComponent } from './pages/not-fount/not-fount.component';
 import { RegistryComponent } from './pages/registry/registry.component';
-import { RegistrygenresComponent } from './pages/registrygenres/registrygenres.component';
-import { UpdategenresComponent } from './pages/updategenres/updategenres.component';
+import { RegistrygenresComponent } from './pages/mantenedores/games/mantgames/genres/registrygenres/registrygenres.component';
+import { UpdategenresComponent } from './pages/mantenedores/games/mantgames/genres/updategenres/updategenres.component';
 
 const routes: Routes = [
   {

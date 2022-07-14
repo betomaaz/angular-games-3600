@@ -8,11 +8,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { ComponentsModule } from '../components/components.module';
-import { MantgamesComponent } from './mantgames/mantgames.component';
+import { MantgamesComponent } from './mantenedores/games/mantgames/mantgames.component';
 import { RegistryComponent } from './registry/registry.component';
-import { MantgenresComponent } from './mantgenres/mantgenres.component';
-import { RegistrygenresComponent } from './registrygenres/registrygenres.component';
-import { UpdategenresComponent } from './updategenres/updategenres.component';
+import { MantgenresComponent } from './mantenedores/games/mantgames/genres/mantgenres/mantgenres.component';
+import { RegistrygenresComponent } from './mantenedores/games/mantgames/genres/registrygenres/registrygenres.component';
+import { UpdategenresComponent } from './mantenedores/games/mantgames/genres/updategenres/updategenres.component';
 
 
 
