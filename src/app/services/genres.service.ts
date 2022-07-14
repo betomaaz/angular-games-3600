@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { genre, genreResponse } from '../interfaces/interfaces';
+import { UserService } from './user.service';
 
 const url = environment.URL;
 
@@ -13,7 +14,7 @@ export class GenresService {
   constructor(private http:HttpClient) { }
 
   getGenres(){
-    return this.http.get<genreResponse>(`${url}/genre`);
+    return this.http.get<genreResponse>(`${url}/genre`);  
   }
 
   postGenres(genre:genre){

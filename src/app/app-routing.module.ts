@@ -1,20 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { UserGuard } from './guards/user.guard';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MantgamesComponent } from './pages/mantenedores/games/mantgames/mantgames.component';
-import { MantgenresComponent } from './pages/mantenedores/games/mantgames/genres/mantgenres/mantgenres.component';
 import { NotFountComponent } from './pages/not-fount/not-fount.component';
 import { RegistryComponent } from './pages/registry/registry.component';
-import { RegistrygenresComponent } from './pages/mantenedores/games/mantgames/genres/registrygenres/registrygenres.component';
-import { UpdategenresComponent } from './pages/mantenedores/games/mantgames/genres/updategenres/updategenres.component';
 
 const routes: Routes = [
   {
     path:'home',
     component:HomeComponent
+  },
+  {
+    path:'mantgenres',
+    loadChildren:()=>import('./pages/mantenedores/genres/genres.module').then(m=>m.GenresModule),
+    //canLoad:[UserGuard]
   },
   {
     path:'about',
@@ -35,18 +38,6 @@ const routes: Routes = [
   {
     path:'mantgames',
     component:MantgamesComponent
-  },
-  {
-    path:'mantgenres',
-    component:MantgenresComponent
-  },
-  {
-    path:'registrygenres',
-    component:RegistrygenresComponent
-  },
-  {
-    path:'updategenres',
-    component:UpdategenresComponent
   },
   {
     path:'',

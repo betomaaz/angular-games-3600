@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { User, userToken } from '../interfaces/interfaces';
 
@@ -15,7 +16,7 @@ export class UserService {
   userName: string = "";
   userRole: string = "";
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private router:Router) { }
 
   async login(user : User){
 
@@ -72,6 +73,18 @@ export class UserService {
     this.userName = "";
     this.userRole = "";
   }
+
+  async validateUser():Promise<boolean>{
+    this.uploadToken();
+    if(!this.token){
+      this.router.navigate(['/login'])
+      return Promise.resolve(false);
+    }
+    else{
+      return Promise.resolve(true);
+    }
+  }
+
 
   async postAccount(user:User){
     return new Promise(resolve =>{

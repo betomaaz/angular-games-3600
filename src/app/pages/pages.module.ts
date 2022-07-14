@@ -10,9 +10,8 @@ import { LoginComponent } from './login/login.component';
 import { ComponentsModule } from '../components/components.module';
 import { MantgamesComponent } from './mantenedores/games/mantgames/mantgames.component';
 import { RegistryComponent } from './registry/registry.component';
-import { MantgenresComponent } from './mantenedores/games/mantgames/genres/mantgenres/mantgenres.component';
-import { RegistrygenresComponent } from './mantenedores/games/mantgames/genres/registrygenres/registrygenres.component';
-import { UpdategenresComponent } from './mantenedores/games/mantgames/genres/updategenres/updategenres.component';
+import { GenresModule } from './mantenedores/genres/genres.module';
+
 
 
 
@@ -24,17 +23,15 @@ import { UpdategenresComponent } from './mantenedores/games/mantgames/genres/upd
     NotFountComponent,
     LoginComponent,
     MantgamesComponent,
-    RegistryComponent,
-    MantgenresComponent,
-    RegistrygenresComponent,
-    UpdategenresComponent
+    RegistryComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     RouterModule,
     ComponentsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    GenresModule
   ]
 })
 export class PagesModule { }
